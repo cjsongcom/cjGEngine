@@ -1,0 +1,62 @@
+CJSER_IMPL_SERIALIZE_END(cjTMEvaluator)
+
+CJSER_IMPL_SERIALIZE_POST_BEGIN(cjTMEvaluator)
+
+	if(ser.IsLoading())
+	{
+		ser.PostSerializeSerObjPtr(m_spTMDat);
+
+			//cjtemp
+			//cjserverify
+			//{
+			//	cjINT32 err_st[3] = {0}; // pos, rot, scale
+
+			//	if(m_value.IsPosValid())
+			//	{
+			//		err_st[0] |= m_channelItem[cjAniEvalChan_Pos] == cjAniEvalChanItem_NoData ? 1 : 0;
+
+			//		if(!m_spTMDat)
+			//			err_st[0] |= (m_channelItem[cjAniEvalChan_Pos] & cjAniEvalChanItemMask_Constant) ? 0 : 1;
+			//	}
+			//	else
+			//	{
+			//		if(!m_spTMDat || m_spTMDat->GetPosKeyCount() == 0)
+			//			err_st[0] = m_channelItem[cjAniEvalChan_Pos] != cjAniEvalChanItem_NoData ? 1 : 0;
+			//	}
+
+			//	if(m_spTMDat)
+			//	{
+			//		if(m_spTMDat->GetPosKeyCount() > 0)
+			//			err_st[0] = m_channelItem[cjAniEvalChan_Pos] == cjAniEvalChanItem_NoData ? 1 : 0;
+			//	}
+
+			//	cjAssert(err_st[0] == 0);			
+			//	
+			//}
+
+			//cjtemp
+			// load desc
+			/*{
+				cjINT32 valCount[3] = {0};
+				cjINT32 tmdCount[3] = {0};
+
+				valCount[0] = m_value.IsPosValid() ? 1:0;
+				valCount[1] = m_value.IsRotateValid() ? 1:0;
+				valCount[2] = m_value.IsScaleValid() ? 1:0;				
+
+				if(m_spTMDat)
+				{
+					tmdCount[0] = m_spTMDat->GetPosKeyCount();
+					tmdCount[1] = m_spTMDat->GetRotKeyCount();
+					tmdCount[2] = m_spTMDat->GetScaleKeyCount();
+				}
+				
+				cjMLOG(_CT("%s tmdat(pos,rot,scale count)= %d %d %d , posed(p,r,s) = %d %d %d"), 
+					*(GetTag().GetID()), 					
+					tmdCount[0], tmdCount[1], tmdCount[2],
+					valCount[0], valCount[1], valCount[2]);
+
+			}*/
+	}
+
+CJSER_IMPL_SERIALIZE_POST_END(cjTMEvaluator)
